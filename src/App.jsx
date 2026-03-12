@@ -20,8 +20,9 @@ function deriveActivePlayer(gameTurns) {
     return currentPlayer;      
 }
 
-function App() {   
-   const [gameTurns, setGameTurns] = useState([]);     
+function App() {    
+   const [players, setPlayers] = useState({X: "Player 1", O:"Player 2"}); 
+   const [gameTurns, setGameTurns] = useState([]);      
   //  const [gameWinner, setHasWinner] = useState(false);     
 // const  [activePlayer, setActivePlayer] = useState('X');        
    const activePlayer = deriveActivePlayer(gameTurns);   
@@ -66,6 +67,14 @@ for(const combination of WINNING_COMBINATIONS) {
     setGameTurns([]);
   }
 
+  function handlePlayerNameChange(symbol, newName) {
+    setPlayers(prevPlayers => {
+      return {
+        ...prevPlayers,
+        [symbol]: newName
+      };
+    });
+  }
 
   return <main>
         <div id="game-container"> 
