@@ -44,7 +44,7 @@ for(const combination of WINNING_COMBINATIONS) {
 
     if (firstSquareSymbol && firstSquareSymbol === secondSquareSymbol 
       && firstSquareSymbol === thirdSquareSymbol) { 
-      winner = firstSquareSymbol;  
+      winner = players[firstSquareSymbol];  
     }    
   }
 
